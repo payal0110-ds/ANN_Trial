@@ -17,6 +17,7 @@ with open('onehot_encoder_geo.pkl','rb') as file:
     onehot_encoder_geo=pickle.load(file)
 with open('scaler.pkl','rb') as file:
     scaler=pickle.load(file)
+    
 
 # User input
 geography = st.selectbox('Geography', onehot_encoder_geo.categories_[0])
@@ -29,6 +30,7 @@ tenure = st.slider('Tenure', 0, 10)
 num_of_products = st.slider('Number of Products', 1, 4)
 has_cr_card = st.selectbox('Has Credit Card', [0, 1])
 is_active_member = st.selectbox('Is Active Member', [0, 1])
+
 
 # Prepare the input data
 input_data = pd.DataFrame({
